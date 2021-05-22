@@ -1,0 +1,108 @@
+\chapter{Einleitung}
+
+\section{Definition}
+Data Mining ist ein Sammelbegriff für die Anwendung statistischer Verfahren auf grosse Datenmengen. Das Ziel dieser Verfahren ist es, aus den Daten neue Erkentnisse zu gewinnen, wie etwa Korrelationen oder Trends zu identifizieren. Durch die Anwendung von Data Mining können in grossen Datenmengen Muster und Regeln erkennt werden, die durch manuelle Auswertungen nur schwer zu erkennen sind.
+Entgegen der möglichen Erwartung aus dem Begriff Data Mining, geht es bei diesen Verfahren nicht darum, Daten zu generieren oder zu sammeln. Dieser Prozessschritt geschieht jeweils vor dem Data Mining und ist somit nicht Teil vom Data Mining Prozess. 
+
+\section{Erläuterungen}
+Gründsätzlich beruht Data Mining meist auf Verfahren der Statistik und somit aufgrund mathematischer Grundlagen. In vielen Fällen beruhen diese statistischen Verfahren entweder auf statistischen Variabeln oder auf Zufallsvariablen, welche mittels Wahrschinlichkeitsrechnungen bestummen werden können. In vielen der aktuell verwendeten Verfahren werden mehrere dieser Variabeln gleichzeitig untersucht. Dieses Vorgehen werden auch multivariante Verfahren gennant.
+
+Häufig wird auch Machine Learning als Data Mining bezeichnet. Dies ist historisch aber nicht ganz korrekt. Während es beim Data Mining darum geht, neue Muster und somit Erkentnisse aus Daten zu gewinnen, versucht man mit Machine Learning neue Berechnungsfunktionen aus den Daten abzuleiten. Moderne Data Mining Verfahren verwenden jedoch meist Techniken aus dem Bereich des Machine Learning. Im folgenden werden Techniken und Verfahren gezeigt, die teilweise aus einer Überschneidung von Data Mining und Machine Learning bestehen.
+https://news.microsoft.com/de-de/microsoft-erklaert-was-ist-data-mining-definition-funktionen/
+
+\clearpage
+\section{Beispiele von Anwendungsfälle}
+\subsection{Watson for Oncology}
+Watson for Oncology (WFO) ist eine von IMB entwickelte Platform, die bei der Behandlung von Krebspatienten helfen soll. Diese Platform ist ein spannendes Beispiel dafür, wie Data Mining und Machine Learning den Menschen unterstützen kann, jedoch zeigt es auch, wo die Schwierigkeiten bei einem solchen System enstehen.
+
+WFO wurde als Unterstützung für Ärzte entwickelt, welche entscheiden, welche Krebsbehandlung ein Patient erhalten soll. Dabei kennt WFO eine vorgegebene Liste an Behandlungen. Aufgrund der Patientenakte entscheidet WFO anschliessend, welcher diese Behandlungen dem Patienten empfohlen werden können. WFO entwickelt also nicht eingenständig neue Behandlungen, sondern wählt aus bekannten Methoden die besten aus.
+
+Diese Auswahl bassiert auf den Informationen des Patienten. Dies beinhaltet einerseits persönliche Merkmale wie das Alter oder das Geschlecht, aber auch die gesundheitlichen Informationen wie die Art und Stufe des Tumors, sowie die bereits durchgeführenten Vorbehandlungen.
+Diese Daten werden mit früheren Patientendaten verglichen, bei welchen die damals gewählte Methodik für die Behandlung bekannt ist. Aufgrund dieses Vergleichs schlägt WFO die besten Methoden vor und schliesst auch gewisse Methoden aus.
+
+Die behandelnden Ärzte nutzen anschliessend dieses Resultat als weitere Hilfestellung bei der Entscheidung, welche Behandlungsmethode gewählt wird.
+WFO trifft also nicht direkt eine Entscheidung, sondern dient lediglich als Hilfsmittel. Die effektive Behandlungsart wird aktuell immer von einem Arzt ausgewählt.
+
+Diverse Studien zu WFO haben ergeben, dass WFO als Hilfsmittel hilfreich sein kann, jedoch noch diverses Schwirigkeiten aufweisst, bevor es die Evalutaion eines Arztes komplet ersetzen kann.
+
+Das Hauptproblem dabei ist, dass WFO nicht vollständig transparent ist, aufgrund von welchen Informatienen welche Behandlung vorgeschlagen wurde. 
+Dies führt dazu, dass die Ärzte die Vorschläge nicht zwangsläufig nachvollziehen können und allfällige Unstimmigkeiten im WFO-Algorithmus nicht erkannt werden können.
+
+Ein weiteres Problem ist die Datengrundlage. WFO proklamiert eine Übereinstimmung von rund 93\% zwischen den von WFO vorgeschlagenen Behandlungen und den von Fachärzten vorgeschlagenen Behandlungen.
+Unabhängige Untersuchungen haben nun jedoch ergeben, dass dies stark davon abhängt, welche Art von Krebs der Patient hat und in welcher Patientengruppe (Alter, Geschlecht) die zu behandlende Person ist. \cite{wfo1} \cite{wfo2} \cite{wfo3}
+
+
+\subsection{Netflix Thumbnails}
+Sobald es um Gewinnung von Informationen aus Daten geht, wird oft Netflix gennant. Netflix hat sich in den letzten Jahren nicht zuletzt durch gesammelte Daten einen grossen Marktanteil im Online Streaming erarbeitet.
+Dabei trackt Netflix seine Nutzenden und versucht aufgrund des Verhaltens dieser Nutzenden herauszufinden, wieso eine Person ein Film oder eine Serie konsumiert.\cite{netflix}
+
+Anschliessend wird versucht, dieses Verhalten künstlich zu erzeugen. Das einfachste Beispiel dazu ist die Generierung der Thumbnails (Vorschaubilder). Je nach Präferenz der aktuell eingeloggten Person werden andere Bilder angezeigt. Im Rahmen dieser Arbeit wurde ein kleiner Selbsttest durchgeführt. Auf fünf verschiedenen Konten wurde nach der britischen Serie Peaky Blinders gesucht. Dabei wurden drei unterschiedliche Thumbnails angezeigt:
+\begin{figure*}[ht!]
+	\includegraphics[width=.3\textwidth]{peakyblinders1.png}\hfill
+	\includegraphics[width=.3\textwidth]{peakyblinders2.png}\hfill
+	\includegraphics[width=.3\textwidth]{peakyblinders3.png}
+	\caption{Angezeigte Thumbnails bei verschiedenene Netflix Konten (Quelle: Netflix)}
+\end{figure*}
+
+Das linke Bild wurde nur in einem Konto angezeigt, während das mittlere und das rechte jeweils in zwei der fünf Konten angezeigt wurden.
+Spannend dabei ist das mittlere Bild. Eine der beiden Personen gab an, dass sie kürzlich eine Serie mit Anya Taylor-Joy (der Schauspielerin im Bild) geschaut hat. Die andere Person gab an, die Schauspielerin nicht zu kennen, nannte aber eine Vorliebe für Liebesdramen. Beides scheinen hier gute Gründe zu sein, dieses Thumbnail den anderen Thumbnails vorzuziehen. Die beiden Personen, welche das rechte Bild angezeigt erhielten, gaben an allem voran Dramen und Thriller zu konsumieren, was das Thumbnail ebenfalls erklären könnte. Für das linke Bild konnte kein ausschlaggebendes Kriterium erkannt werden, da die Person keine spezifische Filmvorliebe angeben konnte.
+
+Obwohl hier über die Gründe nur gemutmasst werden kann, zeigt es doch, welche Kriterien Netflix für die Anzeige eines Thumbnails verwendet und wie dadurch die Aufmerksamkeit der Nutzenden geweckt werden soll.
+
+\subsection{Erkennung von Verbrechensmustern}
+Bereits 1949 veröffentlichte George Orwell das Buch mit dem Titel 1984. Dabei beschrieb er einen totalitären Überwachungsstaat, welcher fast die gesammte Privatsphäre seiner Bürger und Bürgerinnen unterdrückt. Dabei wird das Verhalten der einzelnen Personen überwacht und falsches, dem Staat nicht genehmes Verhalten bestraft. 
+Dieser Ansatz wird heutzutage in gewissen Gebieten in die Wirklichkeit umgesetzt. Durch die Digitalisierung kann die Bevölkerung heute genauer untersucht und überwacht werden.
+Ein Beispiel dazu ist die Erkennung von Verbrechensmustern. Dabei wird versucht in bekannten Verbrechensdaten Muster zu erkennen, die Aufschluss darüber geben sollen, wann und wo das nächste Verbrechen verübt werden soll.
+
+Ein gutes Beispiel dazu ist das Chicago Police Department. Dieses wendet Data Mining Techniken auf polizeiliche Datensätze an, darunter Kriminalitätsvorfälle, Verhaftungen und Wetterdaten. Diese historische Daten werden mit IoT-Echtzeitdaten kombiniert (z. B. mit sensorgesteuerten Kameras). Dadurch können Verbrechen zeitnah oder sogar vor der Ausübung erkannt werden.
+
+Durch dieses Verfahren können auch Regionen erkannt werden, in welchen überdurchschnittlich viele Verbrechen verübt werden. Diese Regionen können anschliessend genauer überwacht und geprüft werden.
+Wie Orwell bereits früh erkannt hat, führt dies auch zu diversen Nebeneffekten, die vielfach als Negativ aufgefasst werden. Auf einige davon wird im Kapitel \hyperref[sec:ethics]{Ethische Grundsätze} eingegangen.\cite{crime-prevention}
+
+Ein einfaches Verfahren zur Gruppierung von Verbrechen in Regionen, Zeiteinheiten oder Verbrechensart ist das Clustering. Dieses wird im Kapitel \hyperref[sec:clustering]{Clusteranalyse} genauer erläutert. Dabei werden die bestehenden Verbrechen in Gruppen eingeteilt. Durch diese Gruppen können anschliessend Erkentnisse gefunden werden, welche Regionen besonders gefährdet sind, oder welche Faktoren zu Verbrechen führen.\cite{crime}
+
+Diese Art von Verbrechenserkennung hat durch die Digitalisierung stark zu genommen und es ist davon aszugehen, dass diese Analysen in Zukunft exakter und ausführlicher werden dürften.
+
+\subsection{Bayer}
+Ein kleines aber sehr spezifisches Beispiel für die Verwendung von Machine Learning und Data Mining ist die Unkrauterkennung der Firma Bayer.
+
+Bayer hat über die Jahre rund 100'000 Bilder von Unkraut gesammelt. Daraus ergibt sich eine Datenbank von 70 Arten an Unkraut.
+Damit ein Bauer nun das Unkraut möglichst effektiv vernichten kann, nutze er diese Datenbank als Grundlage. Er kann ein Foto des Unkrautes hochladen und erhält die Information, um welches Unkraut es sich handelt.
+
+Dadurch können die Landwirte die Auswirkungen ihrer Entscheidungen – zum Beispiel die Wahl des Saatguts, die Menge an Pflanzenschutzmitteln oder den Erntezeitpunkt – viel genauer vorhersagen.\cite{bayer}
+
+\clearpage
+\section{Ethische Grundsätze}
+\label{sec:ethics}
+Grundsätzlich gibt es viele ethische Überlegungen zu klären, sobald aus Daten Informationen gewonnen werden sollen. Diese alle zu erkennen und zu listen ist nahezu unmöglich. Deshalb werden im folgenden beispielhaft zwei Problematiken gezeigt, die bei der Erhebung, sowie der Verwendung der Daten auftretten. \cite{ethics}
+
+Da es sich hierbei um ethische Fragen handelt, können diese hier auch nicht abschliessend beantwortet werden.
+
+\subsection{Datenschutz / Privatsphäre}
+Zwei Themen die ethisch eine ähnliche Problematik darstellen sind der Datenschutz und die Privatsphäre der Menschen.
+Die Frage hierzu lautet: Wie viele Informationen über uns sind wir bereit bekannt zu geben, um die Vorteile von Datenanalysen zu erzeugen und wem vertrauen wir diese an?
+
+Hierzu gibt es diverse rechtliche Grundlagen, die es zu befolgen gibt. Inwiefern diese eigehalten werden, ist jedoch für die meisten Menschen nur schwierig zu prüfen. 
+
+Das Thema Datenschutz wurde in den letzten Jahren zunehmend auch medial immer wieder behandelt.
+Zwei berühmte, eher negative behaftete Beispiele hierzu sind der von Edward Snowden publik gemacht Datenskandal rund um die NSA und der Datenskandal rund um Cambridge Analytica. In zweiterem Beispiel wurden Facebook Daten verwendet, um geziehlt Wahlstimmen zu gewinnen.
+Ein guter Einstieg in die Thematik bietet der Film <<The great hack>> von Jehane Noujaim and Karim Amer oder die hier im Dokument verlinkten Quellen. \cite{nsa} \cite{ca}
+
+Bezüglich Privatsphäre können wir hier das Beispiel der Digidog aufführen. Hierbei handelt es sich um hundeähnlichen Roboter, welcher mit verschiedener Sensoren seine Umgebung überwacht. Das New York Police Department hat begonnen, diese als Hilfsmittel zu verwenden. Dies hat in der Bevölkerung von New York diverse Zweifel zur Privatsphäre verursacht.\cite{nypd}
+
+\subsection{Bias}
+Unter einem Bias versteht sich im allgemeinen eine Verzerrung der Wahrnehmung. Diesen gibt es nicht nur im Bereich Data Mining, sondern es handelt sich um ein generelles Problem im Umgang mit Informationen.
+Ein Beispiel dazu ist der Confirmation Bias. Dieser beschreibt, dass der Mensch gerne seine eigene Meinungen bestätigt. Bei einer Recherche wird also nach Informationen gesucht die eine eigene Aussage belegen anstelle von anderen Quellen, die diese Aussage wiederlegen könnten.\cite{bias}
+
+Auch im Rahmen von Data Mining und Machine Learning existieren solche Bias. Zwei davon werden nachfolgend erläutert: \cite{bias2}
+
+\subsubsection{Sample Bias (Stichprobenverzerrung)}
+Es tritt auf, wenn die Daten, die zum Trainieren eines Modells verwendet werden, nicht genau die Umgebung repräsentieren, in der das Modell arbeiten wird. 
+
+Als Beispiel können wir eine Software nehmen, die Tiere auf Bilder erkennen und so Hunde und Katzen unterscheiden kann. Zur Erstellung dieser Software verwenden wir nur Bilder, die im Innern aufgenommen wurden. Falls wir jetzt versuchen in mittels unserer Software Fotos zu klassifizieren, die im Wald aufgenommen wurden, werden wir mehr falsche Klassifizierungen erhalten als wir erwarten würden.
+
+\subsubsection{Prejudice Bias (Vorurteilsbedingte Verzerrung)}
+Wir wollen nun eine Software entwickeln, die uns im Bewerbungsprozess unterstützt und uns geeignete Dossiers vorselektiert.
+Für die Erstellung dieser Software verwenden wir die Daten aller aktuell in der Firma tätigen Personen. Da es sich in diesem Beispiel um eine IT-Firma handelt, besteht diese aktuell hauptsächtlich aus Männern.
+Die Folge dieses Prejudice Bias ist nun, dass wir ausschliesslich Dossiers von Männern vorgeschlagen erhalten und keine von Frauen.
+Hätten wir in unseren Ursprungsdaten das Geschlecht nicht mit einbezogen und nur die Qualifikation der Personen angegeben, wäre dieser Bias zu verhindern gewesen.

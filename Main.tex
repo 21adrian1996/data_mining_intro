@@ -1,0 +1,54 @@
+\documentclass[
+	fontzize=12pt, % Fontsize
+	paper=a4, % DIN format A4
+	openany,	% starts the chapter on the next page (even or odd).
+	bibliography=totoc % adds bib to table of contents
+	]{scrbook}
+
+% Include definitions, custom commands, packages and so on 
+\include{preamble}
+
+
+% Start of the document
+\begin{document}
+
+\setcounter{secnumdepth}{3}
+
+% Titelblatt
+\include{content/framework/title}
+
+\pagenumbering{Roman}
+
+\iftoggle{useAbstract}{
+	% Abstract
+	\include{content/framework/abstract}
+}
+
+% Inhaltsverzeichnis
+\tableofcontents
+
+\pagenumbering{arabic}
+\RedeclareSectionCommand[beforeskip=10pt, afterskip=15pt]{chapter}
+% Include chapters here:
+\include{content/chapters/1_Introduction}
+\include{content/chapters/2_Study}
+\include{content/chapters/3_Examples}
+\include{content/chapters/4_Conclusion}
+
+% Bibliography (Literaturverzeichnis)
+\printbibliography
+
+% Inhaltsverzeichnis
+\phantomsection 
+\addcontentsline{toc}{chapter}{\listfigurename} 
+\listoffigures
+
+% Eidesstattliche Erklärung
+\include{content/framework/affirmation}
+
+% Zurücksetzen \chaptermark
+\let\chaptermark\oldchaptermark
+
+% Einbindung des Anhangs
+\include{content/framework/appendix}
+\end{document}      
