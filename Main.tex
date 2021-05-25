@@ -33,18 +33,15 @@
 \include{content/chapters/1_Introduction}
 \include{content/chapters/2_Study}
 \include{content/chapters/3_Examples}
-\include{content/chapters/4_Conclusion}
 
-% Bibliography (Literaturverzeichnis)
-\printbibliography
+\printbibliography[heading=subbibliography, title={Literatur}, nottype=misc]
+\addcontentsline{toc}{chapter}{Literaturverzeichnis und \listfigurename} 
+\printbibliography[heading=subbibliography, title={Online Quellen}, type=misc]
+
 
 % Inhaltsverzeichnis
 \phantomsection 
-\addcontentsline{toc}{chapter}{\listfigurename} 
 \listoffigures
-
-% Eidesstattliche Erklärung
-\include{content/framework/affirmation}
 
 % Zurücksetzen \chaptermark
 \let\chaptermark\oldchaptermark
